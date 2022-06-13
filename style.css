@@ -1,0 +1,48 @@
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+
+}
+
+.Header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: black;
+    align-items: center;
+    color: white;
+    height: 20vh;
+    padding-top: 20px;
+
+}
+
+.Title {
+    font-family: 'WaltographRegular';
+    font-size: 50px;
+}
+
+.Sub-title {
+    font-family: 'Mouse Memoirs', sans-serif;
+    font-size: 100px;
+}
+
+.Content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+    color: white;
+    height: 50vh;
+
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    background-color: #ff2226;
+    color: white;
+    height: 30vh;
+}
+
+
