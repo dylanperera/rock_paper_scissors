@@ -4,47 +4,97 @@
 
 //then compare the strings to determine whos the winner
 
-let game = main();
-console.log(game);
+let playerScore = 0;
+let computerScore = 0;
+
+
+let playerScoreText = document.querySelector(".player>.wins");
+let computerScoreText = document.querySelector(".computer>.wins");
+let message = document.querySelector(".game-updates");
+
+
+main();
 
 function main() {
   //get user input
-  let userInput;
-  let keepPrompting = true;
 
-  do {
-    userInput = prompt("Rock, Paper, or Scissors?");
-    userInput = userInput.toLowerCase();
-    userInput = userInput.replace(
-      userInput.charAt(0),
-      userInput.charAt(0).toUpperCase()
-    );
 
-    if(userInput === "Rock" || userInput === "Paper" || userInput === "Scissors")
-    {
-        keepPrompting = false;
-    }
-  } while (keepPrompting === true)
+  const gameOptions = document.querySelectorAll('.image-animation');
+  
+  gameOptions.forEach((gameOption) =>
+  {
+    gameOption.addEventListener("click", () => {
 
-  // let userInput = prompt("Rock, Paper, or Scissors?");
+      if(playerScore !== 5 && computerScore !== 5)
+      {
+        playGame(gameOption.id);
+      } else {
+        //bring to new page
+        return;
+      }
+    });
+  }
+  ) 
+  
+}
+
+function playGame(userInput)
+{
   let computerInput = getComputerInput();
-  console.log(computerInput);
+
+ // console.log(userInput);
 
   let matchResult;
   //game logic
   if (userInput == computerInput) {
+
     matchResult = "Tie";
-  } else if (
-    (userInput == "Rock" && computerInput == "Scissors") ||
-    (userInput == "Paper" && computerInput == "Rock") ||
-    (computerInput == "Scissors" && computerInput == "Paper")
-  ) {
-    matchResult = "Player wins";
-  } else {
-    matchResult = "Computer wins";
+
+  } else if (userInput == "rock" && computerInput == "scissors") {
+
+    matchResult = "Rock beats Scissors, Player wins";
+    playerScore++;
+    playerScoreText.textContent = playerScore;
+
+  } else if (userInput == "paper" && computerInput == "rock") {
+
+    matchResult = "Paper beats Rock, Player wins";
+    playerScore++;
+    playerScoreText.textContent = playerScore;
+
+  } else if (userInput == "scissors" && computerInput == "paper") {
+
+    matchResult = "Scissors beats Paper, Player wins";
+    playerScore++;
+    playerScoreText.textContent = playerScore;
+
+  } else if (computerInput == "rock" && userInput == "scissors"){
+
+    matchResult = "Rock beats Scissors, Computer wins";
+    computerScore++;
+    computerScoreText.textContent = computerScore;
+  
+  } else if (computerInput == "paper" && userInput == "rock") {
+    
+    matchResult = "Paper beats Rock, Computer wins";
+    computerScore++;
+    computerScoreText.textContent = computerScore;
+
+  } else if (computerInput == "scissors" && userInput == "paper") {
+    matchResult = "Scissor beats rock, Computer wins";
+    computerScore++;
+    computerScoreText.textContent = computerScore;
+
   }
-  return matchResult;
+
+  message.textContent = matchResult;
+  
+
+
 }
+
+
+
 
 function getComputerInput() {
   //random number between 1-3
@@ -52,11 +102,11 @@ function getComputerInput() {
   let choice;
 
   if (num == 1) {
-    choice = "Rock";
+    choice = "rock";
   } else if (num == 2) {
-    choice = "Paper";
+    choice = "paper";
   } else {
-    choice = "Scissors";
+    choice = "scissors";
   }
 
   return choice;
