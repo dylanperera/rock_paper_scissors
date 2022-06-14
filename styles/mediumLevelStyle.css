@@ -35,6 +35,7 @@ body {
     color: white;
     height: 40vh;
     justify-content: space-evenly;
+    background-color: red;
 
 }
 
@@ -60,13 +61,13 @@ img {
 .image-animation:hover {
     width: 225px;
     height: 225px;
-    box-shadow: 0px 0px 40px #f9d70b;
+    box-shadow: 0px 0px 40px black;
 }
 
 .footer {
     display: flex;
     flex-direction: column;
-    background-color: #ff2226;
+    background-color: goldenrod;
     color: white;
     height: 40vh;
 }
@@ -90,7 +91,7 @@ img {
 }
 
 .wins {
-    font-family: 'WaltographRegular';
+    font-family: 'WaltographRegular', sans-serif;
     font-size: 60px;
 }
 

@@ -1,0 +1,40 @@
+body {
+    background-color: #153866;
+    margin: 0px;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    padding-top: 50vh;
+    margin-top: 0;
+    gap: 48px;
+}
+
+.title {
+    color: white;
+    font-family: 'WaltographRegular', sans-serif;
+    font-size: 100px;
+
+}
+
+.levels {
+    display: flex;
+    gap: 48px;
+}
+
+button {
+    background-color: white;
+    color: #153866;
+    border-radius: 12px;
+    font-size: 50px;
+    font-family: 'Mouse Memoirs', sans-serif;
+    padding: 16px;
+    box-shadow: 8px 8px black;
+}
+
+button:hover {
+    background-color: lightgrey;
+}

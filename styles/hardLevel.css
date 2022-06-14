@@ -1,0 +1,120 @@
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+
+}
+
+.Header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: green;
+    align-items: center;
+    color: white;
+    height: 20vh;
+    padding-top: 20px;
+
+}
+
+.Title {
+    font-family: 'WaltographRegular';
+    font-size: 50px;
+}
+
+.Sub-title {
+    font-family: 'Mouse Memoirs', sans-serif;
+    font-size: 100px;
+}
+
+.Content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    height: 40vh;
+    justify-content: space-evenly;
+    background-color: gold;
+
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    border: 3px solid white;
+    padding: 20px;
+
+}
+
+.image-animation {
+    transition: width 2s, height 2s;
+
+
+}
+
+.game-option {
+    display: flex;
+    flex-direction: column;
+}
+
+.image-animation:hover {
+    width: 225px;
+    height: 225px;
+    box-shadow: 0px 0px 40px black;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    background-color: blue;
+    color: white;
+    height: 40vh;
+}
+
+.score {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.player, .computer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:20px;
+}
+
+.special-font {
+    font-family: 'Mouse Memoirs', sans-serif;
+    font-size: 75px;
+}
+
+.wins {
+    font-family: 'WaltographRegular', sans-serif;
+    font-size: 60px;
+}
+
+.bottom-page {
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.pete-image {
+    width: 75px;
+    height: auto;
+    border: none;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    align-self: center;
+
+}
+
+.game-updates {
+    align-self: center;
+    font-family: 'WaltographRegular';
+    font-size: 40px;
+}
+
