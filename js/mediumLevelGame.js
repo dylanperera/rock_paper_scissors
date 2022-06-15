@@ -88,8 +88,57 @@ function playGame(userInput)
   }
 
   message.textContent = matchResult;
-  
 
+  if (playerScore === 5 || computerScore === 5) {
+    if (playerScore == 5) {
+      createModal("You Won!");
+    } else {
+        createModal("You Lost!");
+    }
+  }
+
+}
+
+function createModal(input) {
+  //darken screen
+
+  //popup
+  let modal = document.createElement("div");
+  let text = document.createElement("div");
+  let optionsContainer = document.createElement("div");
+  let playAgain = document.createElement("a");
+  let menu = document.createElement("a");
+
+  modal.classList.add('modal');
+
+  text.classList.add("modal-text");
+  text.textContent = input;
+
+  
+  optionsContainer.classList.add("modal-options");
+
+  playAgain.href = "mediumLevel.html";
+  let linkToPlay = document.createElement('button');
+  linkToPlay.textContent = "Play Again!";
+  playAgain.appendChild(linkToPlay);
+
+  menu.href = "../index.html";
+  let linkToMenu = document.createElement('button');
+  linkToMenu.textContent = "Menu!";
+  menu.appendChild(linkToMenu);
+  
+  optionsContainer.appendChild(playAgain);
+  optionsContainer.appendChild(menu);
+
+  modal.appendChild(text);
+  modal.appendChild(optionsContainer);
+
+  let content = document.querySelector(".Content");
+  content.removeChild(rock);
+  content.removeChild(paper);
+  content.removeChild(scissors);
+
+  content.appendChild(modal);
 
 }
 
